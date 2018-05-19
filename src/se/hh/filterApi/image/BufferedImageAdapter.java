@@ -5,11 +5,11 @@ import java.awt.image.ColorModel;
 import java.awt.image.WritableRaster;
 import java.util.Hashtable;
 
-public final class ImageAdapter implements Image {
+public final class BufferedImageAdapter implements Image {
 
 	private final BufferedImage image;
 
-	public ImageAdapter(BufferedImage image) {
+	public BufferedImageAdapter(BufferedImage image) {
 		this.image = image;
 	}
 
@@ -20,7 +20,7 @@ public final class ImageAdapter implements Image {
 		WritableRaster imageRaster = image.getRaster();
 		WritableRaster newRaster = image.copyData(imageRaster.createCompatibleWritableRaster());
 		BufferedImage clone = new BufferedImage(colorModel, newRaster, isAlphaPremultiplied, new Hashtable<>());
-		return new ImageAdapter(clone);
+		return new BufferedImageAdapter(clone);
 	}
 
 	@Override

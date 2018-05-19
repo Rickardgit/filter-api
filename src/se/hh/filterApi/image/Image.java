@@ -10,6 +10,6 @@ public interface Image {
 
 	int getRGB(int x, int y);
 
-	void setRGB(int i, int y, int tmp);
+	void setRGB(int x, int y, int rgb);
 
 }
