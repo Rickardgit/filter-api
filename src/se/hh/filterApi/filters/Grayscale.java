@@ -1,16 +1,15 @@
 package se.hh.filterApi.filters;
 
 import java.awt.Color;
-import java.awt.image.BufferedImage;
 
 import se.hh.filterApi.Filter;
-import se.hh.filterApi.commons.ImageCloner;
+import se.hh.filterApi.image.Image;
 
 public final class Grayscale implements Filter {
 
 	@Override
-	public BufferedImage apply(BufferedImage image) {
-		BufferedImage grayscaledImage = new ImageCloner().clone(image);
+	public Image apply(Image image) {
+		Image grayscaledImage = image.clone();
 
 		int width = grayscaledImage.getWidth();
 		int height = grayscaledImage.getHeight();

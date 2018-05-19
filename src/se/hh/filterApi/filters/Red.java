@@ -1,16 +1,15 @@
 package se.hh.filterApi.filters;
 
 import java.awt.Color;
-import java.awt.image.BufferedImage;
 
 import se.hh.filterApi.Filter;
-import se.hh.filterApi.commons.ImageCloner;
+import se.hh.filterApi.image.Image;
 
 public final class Red implements Filter {
 
 	@Override
-	public BufferedImage apply(BufferedImage image) {
-		BufferedImage redImage = new ImageCloner().clone(image);
+	public Image apply(Image image) {
+		Image redImage = image.clone();
 
 		int width = redImage.getWidth();
 		int height = redImage.getHeight();

@@ -1,15 +1,13 @@
 package se.hh.filterApi.filters;
 
-import java.awt.image.BufferedImage;
-
 import se.hh.filterApi.Filter;
-import se.hh.filterApi.commons.ImageCloner;
+import se.hh.filterApi.image.Image;
 
 public final class Swirl implements Filter {
 
 	@Override
-	public BufferedImage apply(BufferedImage image) {
-		BufferedImage swirledImage = new ImageCloner().clone(image);
+	public Image apply(Image image) {
+		Image swirledImage = image.clone();
 
 		int height = swirledImage.getHeight();
 		int width = swirledImage.getWidth();
